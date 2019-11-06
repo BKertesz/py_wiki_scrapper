@@ -19,7 +19,7 @@ def main():
 
     url = get_url(root_url, topic)
     html = parse_html(get_html(url))
-    infobox = extract_infobox(html)
+    infobox = extract_infobox(html)[0]
 
     file_name = create_filename(topic)
     save_infobox(file_name, infobox)
