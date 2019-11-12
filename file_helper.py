@@ -5,6 +5,10 @@ list_to_string = lambda list_object: "\n".join(list_object)
 is_present_in_index = lambda topic_name, index_content: True if topic_name in index_content else False
 is_not_present_in_index = lambda topic_name, index_content: not is_present_in_index(topic_name, index_content)
 
+def append_line_to_file(file_name, line):
+    with open(file_name, "a+", encoding="utf-8") as file:
+        file.write(line + "\n")
+
 def save_to_file(file_name, content):
     with open(file_name, "w+", encoding="utf-8") as file:
         if(content):
@@ -23,7 +27,7 @@ def load_content(file_name):
 def update_index(topic_name, index_name="index.txt"):
     index_content = load_content(index_name)
     if(is_not_present_in_index(topic_name, index_content)):
-        save_to_file(index_name, general_helpers.append_with_new_line(index_content, topic_name))
+        append_line_to_file(index_name, topic_name)
 
 def save_contents_to_file(dictionary):
     create_index()
