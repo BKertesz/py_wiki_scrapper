@@ -5,13 +5,16 @@ The following module is created to scrape the wikipedia of different inviduals. 
 
 ## How to use?
 The names need to be seperated by " ", also you can input as many names as you wish.
-<br/>
+
+### To download information:
 On linux/macos
 ```
-python3 "name of the person" "another name"
+python3 run.py "name of the person" "another name"
 ```
 
 On Windows
 ```
-py "first person" "second person" "nth person"
+py run.py "first person" "second person" "nth person"
 ```
+
+### To search information:
