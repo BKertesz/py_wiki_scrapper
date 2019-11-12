@@ -18,3 +18,15 @@ py run.py "first person" "second person" "nth person"
 ```
 
 ### To search information:
+To search for terms in local files use the following syntax:
+On linux/macos
+```
+python3 search.py "search term1" "search term2" "nth search term"
+```
+On Windows
+```
+py search.py "search term1" "search term2" "nth search term"
+```
+
+## Issue Report
+Any bug/issue or question can be sent to the [following email.](kertesz.balazs92@gmail.com)
