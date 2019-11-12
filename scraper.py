@@ -4,7 +4,7 @@ import requests, general_helpers
 get_url = lambda root, topic: root + topic 
 get_html = lambda url: requests.get(url).text
 parse_html = lambda text: BeautifulSoup(text, "html.parser")
-extract_infobox = lambda html: html.find_all("table", {"class": "infobox vcard"})
+extract_infobox = lambda html: html.find_all("table", {"class": "infobox"})
 extract_text = lambda element: element.find_all(text=True) if element != None else ["Unkown Page"]
 
 def extract_data(list_of_topics, base_url="https://en.wikipedia.org/wiki/"):

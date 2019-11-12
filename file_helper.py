@@ -7,7 +7,8 @@ is_not_present_in_index = lambda topic_name, index_content: not is_present_in_in
 
 def save_to_file(file_name, content):
     with open(file_name, "w+", encoding="utf-8") as file:
-        file.write(content)
+        if(content):
+            file.write(content)
 
 def create_index(file_name="index.txt"):
     if(not os.path.exists(file_name)):
