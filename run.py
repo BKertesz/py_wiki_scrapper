@@ -1,8 +1,8 @@
-import scraper, file_helper
+import scraper, file_helper, cli
 
 def main():
-    list_of_pages = ["Barack Obama", "Donald Trump", "Mike Pence"]
-    result = scraper.extract_data(list_of_pages)
+    list_of_topics = cli.retrive_arguments()
+    result = scraper.extract_data(list_of_topics)
     file_helper.save_contents_to_file(result)
 
 if __name__ == "__main__":
