@@ -17,7 +17,7 @@ def load_content(file_name):
     file_content = ""
     with open(file_name, "r", encoding="utf-8") as file:
         file_content = file.read()
-    return file_content
+    return file_content.splitlines()
 
 def update_index(topic_name, index_name="index.txt"):
     index_content = load_content(index_name)
@@ -29,3 +29,12 @@ def save_contents_to_file(dictionary):
     for key, value in dictionary.items():
         save_to_file(create_filename(key), list_to_string(value))
         update_index(key)
+
+def load_contents_from_list(list_of_file_names):
+    contents = {}
+    for item in list_of_file_names:
+        contents[item] = load_content(create_filename(item))
+    return contents
+
+def load_all_from_index(index_content):
+    return load_contents_from_list(index_content)
